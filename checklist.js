@@ -104,12 +104,20 @@ function handleSubmit() {
 
   window._completedData = { engineer, unitId, date, refNum, records, flagged, flagReasons };
 
-  // Show completion screen
+  // Show completion screen, hide checklist header elements
   document.getElementById('checklistBody').style.display = 'none';
   document.getElementById('completionScreen').classList.add('visible');
   document.getElementById('refNumber').textContent = refNum;
   document.getElementById('completionSub').textContent =
     engineer + ' · ' + unitId + ' · ' + (date || 'Today');
+
+  // Swap header: hide progress/title, show completion nav
+  const mainHeader = document.getElementById('mainHeader');
+  const metaGrid = document.getElementById('metaGrid');
+  const completionHeader = document.getElementById('completionHeader');
+  if (mainHeader) mainHeader.style.display = 'none';
+  if (metaGrid) metaGrid.style.display = 'none';
+  if (completionHeader) completionHeader.classList.add('visible');
 
   if (flagged.length > 0) {
     document.getElementById('flaggedNotice').style.display = 'block';

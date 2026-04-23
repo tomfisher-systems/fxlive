@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="header">
+<div class="header" id="mainHeader">
   <div class="header-top">
     <span class="brand">FX Live — Equipment Service</span>
     <span class="version-tag">SOP v0.1-draft</span>
@@ -20,7 +20,15 @@
   <div class="progress-label" id="progressLabel">0 of 17 steps complete</div>
 </div>
 
-<div class="meta-grid">
+<div class="header-completion" id="completionHeader">
+  <div class="completion-header-label">Spray Head Annual Service — Complete</div>
+  <div class="completion-header-btns">
+    <button class="nav-btn nav-btn-home" onclick="window.location.href='index.html'">Take me home</button>
+    <button class="nav-btn nav-btn-more" onclick="location.reload()">Do more</button>
+  </div>
+</div>
+
+<div class="meta-grid" id="metaGrid">
   <div class="meta-field">
     <span class="meta-label">Engineer *</span>
     <input class="meta-input" id="engineer" type="text" placeholder="Required" autocomplete="off">

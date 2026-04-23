@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High Pressure Pump Annual Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <span class="brand">FX Live — Equipment Service</span>
+    <span class="version-tag">SOP v1.2</span>
+  </div>
+  <div class="page-title">High Pressure Pump Annual Service</div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="progress-label" id="progressLabel">0 of 29 steps complete</div>
+</div>
+
+<div class="meta-grid">
+  <div class="meta-field">
+    <span class="meta-label">Engineer</span>
+    <input class="meta-input" id="engineer" type="text" placeholder="Name" autocomplete="off">
+  </div>
+  <div class="meta-field">
+    <span class="meta-label">Pump ID</span>
+    <input class="meta-input" id="unitId" type="text" placeholder="e.g. HPP-001" autocomplete="off">
+  </div>
+  <div class="meta-field full-width">
+    <span class="meta-label">Date</span>
+    <input class="meta-input" id="dateField" type="date">
+  </div>
+</div>
+
+<div id="checklistBody">
+  <div class="section-heading">Visual Checks</div>
+  <div class="step" id="step-HPP01"><span class="step-code">HPP01</span><span class="step-text">Unit is clean</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP01','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP01','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP01','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP02"><span class="step-code">HPP02</span><span class="step-text">Crankcase oil level correct</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP02','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP02','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP02','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP03"><span class="step-code">HPP03</span><span class="step-text">Crankcase oil is clear</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP03','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP03','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP03','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP04"><span class="step-code">HPP04</span><span class="step-text">Gearbox oil level correct</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP04','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP04','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP04','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP05"><span class="step-code">HPP05</span><span class="step-text">No external oil leaks</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP05','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP05','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP05','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP06"><span class="step-code">HPP06</span><span class="step-text">No cracks in manifold or housings</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP06','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP06','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP06','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP07"><span class="step-code">HPP07</span><span class="step-text">All fasteners are tightened, including mounting bolts</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP07','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP07','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP07','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP08"><span class="step-code">HPP08</span><span class="step-text">Accumulator pressure is between 2–3 bar</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP08','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP08','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP08','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP09"><span class="step-code">HPP09</span><span class="step-text">Strainer clean</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP09','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP09','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP09','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP10"><span class="step-code">HPP10</span><span class="step-text">GEKA seal in good condition</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP10','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP10','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP10','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP11"><span class="step-code">HPP11</span><span class="step-text">Hoses clean, free of damage, no splits</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP11','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP11','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP11','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP12"><span class="step-code">HPP12</span><span class="step-text">Correct sized hose clips used on hoses</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP12','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP12','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP12','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP13"><span class="step-code">HPP13</span><span class="step-text">Start capacitor in good condition, less than 4 years old (record install date if replaced)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP13','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP13','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP13','na')">N/A</button></div></div>
+
+  <div class="section-heading">Functional Checks</div>
+  <div class="step" id="step-HPP14"><span class="step-code">HPP14</span><span class="step-text">Starts smoothly (no violent shaking)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP14','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP14','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP14','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP15"><span class="step-code">HPP15</span><span class="step-text">No knocking or hammering</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP15','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP15','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP15','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP16"><span class="step-code">HPP16</span><span class="step-text">Even rhythm (no irregular pulsing)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP16','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP16','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP16','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP17"><span class="step-code">HPP17</span><span class="step-text">Smooth, consistent diaphragm rhythm</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP17','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP17','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP17','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP18"><span class="step-code">HPP18</span><span class="step-text">No grinding</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP18','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP18','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP18','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP19"><span class="step-code">HPP19</span><span class="step-text">No intermittent pressure surging</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP19','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP19','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP19','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP20"><span class="step-code">HPP20</span><span class="step-text">No high-pitched cavitation sound</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP20','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP20','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP20','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP21"><span class="step-code">HPP21</span><span class="step-text">Pulls fluid within 5 seconds</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP21','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP21','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP21','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP22"><span class="step-code">HPP22</span><span class="step-text">Flow consistent</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP22','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP22','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP22','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP23"><span class="step-code">HPP23</span><span class="step-text">Regulator responsive</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP23','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP23','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP23','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP24"><span class="step-code">HPP24</span><span class="step-text">No leaks present</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP24','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP24','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP24','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP25"><span class="step-code">HPP25</span><span class="step-text">Female Series 23 connector shuts off flow correctly</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP25','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP25','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP25','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP26"><span class="step-code">HPP26</span><span class="step-text">Warm but not excessively hot after 10–15 min</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP26','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP26','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP26','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP27"><span class="step-code">HPP27</span><span class="step-text">Shuts down smoothly</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP27','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP27','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP27','na')">N/A</button></div></div>
+
+  <div class="section-heading">Compliance</div>
+  <div class="step" id="step-HPP28"><span class="step-code">HPP28</span><span class="step-text">PAT test passed and label updated (date recorded below)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP28','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP28','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP28','na')">N/A</button></div></div>
+  <div class="step" id="step-HPP29"><span class="step-code">HPP29</span><span class="step-text">Pump ID clearly visible with readable QR code</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('HPP29','pass')">Pass</button><button class="btn btn-flag" onclick="setState('HPP29','flag')">Flag</button><button class="btn btn-na" onclick="setState('HPP29','na')">N/A</button></div></div>
+
+  <div class="section-heading">Records / Observations</div>
+  <div class="record-row"><div class="record-label">HPR01 — PAT date</div><input class="meta-input" id="rec-HPR01" type="date"></div>
+  <div class="record-row"><div class="record-label">HPR02 — Inspection notes</div><textarea class="record-input" id="rec-HPR02" placeholder="Notes or leave blank…"></textarea></div>
+  <div class="record-row"><div class="record-label">HPR03 — Parts replaced</div><textarea class="record-input" id="rec-HPR03" placeholder="List parts or leave blank…"></textarea></div>
+
+  <div class="warning-bar" id="warningBar">Complete all required steps before submitting.</div>
+  <div class="submit-area">
+    <button class="submit-btn" onclick="handleSubmit()">Complete &amp; Generate PDF</button>
+    <p class="submit-note">Generates a PDF service record ready to upload to Rentman</p>
+  </div>
+</div>
+
+<div class="completion" id="completionScreen">
+  <div class="completion-icon">✓</div>
+  <div class="completion-title">Service Complete</div>
+  <div class="completion-sub" id="completionSub"></div>
+  <div class="ref-block">
+    <div class="ref-label">Rentman Reference</div>
+    <div class="ref-number" id="refNumber">—</div>
+    <div class="rentman-note">Save PDF to Rentman using this filename</div>
+  </div>
+  <div class="flagged-notice" id="flaggedNotice" style="display:none;">
+    <div class="flagged-notice-title">⚑ Flagged Items</div>
+    <div id="flaggedList"></div>
+  </div>
+  <button class="pdf-btn" onclick="generatePDF()">Download PDF Record</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const STEPS = ['HPP01','HPP02','HPP03','HPP04','HPP05','HPP06','HPP07','HPP08','HPP09','HPP10',
+               'HPP11','HPP12','HPP13','HPP14','HPP15','HPP16','HPP17','HPP18','HPP19','HPP20',
+               'HPP21','HPP22','HPP23','HPP24','HPP25','HPP26','HPP27','HPP28','HPP29'];
+const STEP_TEXT = {
+  HPP01:'Unit is clean', HPP02:'Crankcase oil level correct', HPP03:'Crankcase oil is clear',
+  HPP04:'Gearbox oil level correct', HPP05:'No external oil leaks', HPP06:'No cracks in manifold or housings',
+  HPP07:'All fasteners are tightened, including mounting bolts', HPP08:'Accumulator pressure is between 2–3 bar',
+  HPP09:'Strainer clean', HPP10:'GEKA seal in good condition', HPP11:'Hoses clean, free of damage, no splits',
+  HPP12:'Correct sized hose clips used on hoses',
+  HPP13:'Start capacitor in good condition, less than 4 years old (record install date if replaced)',
+  HPP14:'Starts smoothly (no violent shaking)', HPP15:'No knocking or hammering',
+  HPP16:'Even rhythm (no irregular pulsing)', HPP17:'Smooth, consistent diaphragm rhythm',
+  HPP18:'No grinding', HPP19:'No intermittent pressure surging', HPP20:'No high-pitched cavitation sound',
+  HPP21:'Pulls fluid within 5 seconds', HPP22:'Flow consistent', HPP23:'Regulator responsive',
+  HPP24:'No leaks present', HPP25:'Female Series 23 connector shuts off flow correctly',
+  HPP26:'Warm but not excessively hot after 10–15 min', HPP27:'Shuts down smoothly',
+  HPP28:'PAT test passed and label updated (date recorded below)',
+  HPP29:'Pump ID clearly visible with readable QR code'
+};
+const RECORDS = [
+  { id: 'HPR01', label: 'PAT date' },
+  { id: 'HPR02', label: 'Inspection notes' },
+  { id: 'HPR03', label: 'Parts replaced' }
+];
+const PAGE_CONFIG = { title: 'High Pressure Pump Annual Service', sopVersion: 'v1.2', rentmanPrefix: 'hpp' };
+</script>
+<script src="checklist.js"></script>
+<script>initChecklist();</script>
+</body>
+</html>

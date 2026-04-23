@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BR600 Annual Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <span class="brand">FX Live — Equipment Service</span>
+    <span class="version-tag">SOP v0.1</span>
+  </div>
+  <div class="page-title">BR600 Backpack Blower Annual Service</div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="progress-label" id="progressLabel">0 of 19 steps complete</div>
+</div>
+
+<div class="meta-grid">
+  <div class="meta-field">
+    <span class="meta-label">Engineer</span>
+    <input class="meta-input" id="engineer" type="text" placeholder="Name" autocomplete="off">
+  </div>
+  <div class="meta-field">
+    <span class="meta-label">Unit ID</span>
+    <input class="meta-input" id="unitId" type="text" placeholder="e.g. BR600-001" autocomplete="off">
+  </div>
+  <div class="meta-field full-width">
+    <span class="meta-label">Date</span>
+    <input class="meta-input" id="dateField" type="date">
+  </div>
+</div>
+
+<div id="checklistBody">
+  <div class="section-heading">Cleaning &amp; Visual Inspection</div>
+  <div class="step" id="step-BR01"><span class="step-code">BR01</span><span class="step-text">Unit has been cleaned prior to inspection</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR01','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR01','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR01','na')">N/A</button></div></div>
+  <div class="step" id="step-BR02"><span class="step-code">BR02</span><span class="step-text">Cooling fins and fan housing clear of debris</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR02','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR02','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR02','na')">N/A</button></div></div>
+  <div class="step" id="step-BR03"><span class="step-code">BR03</span><span class="step-text">Air filter inspected and blown out with compressed air — replace immediately if damaged or airflow symptoms present</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR03','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR03','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR03','na')">N/A</button></div></div>
+  <div class="step" id="step-BR04"><span class="step-code">BR04</span><span class="step-text">Spark plug inspected — free of carbon build-up, oil deposits and ceramic cracks (colour noted in BRR01: oily = rich, white = lean, tan/brown = healthy)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR04','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR04','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR04','na')">N/A</button></div></div>
+  <div class="step" id="step-BR05"><span class="step-code">BR05</span><span class="step-text">Spark arrestor screen clean and unobstructed</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR05','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR05','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR05','na')">N/A</button></div></div>
+  <div class="step" id="step-BR06"><span class="step-code">BR06</span><span class="step-text">Fuel filter free of dirt and cracks</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR06','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR06','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR06','na')">N/A</button></div></div>
+  <div class="step" id="step-BR07"><span class="step-code">BR07</span><span class="step-text">Fuel cap seal in good condition</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR07','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR07','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR07','na')">N/A</button></div></div>
+  <div class="step" id="step-BR08"><span class="step-code">BR08</span><span class="step-text">Recoil starter cord in good condition — no fraying, pulls and retracts smoothly</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR08','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR08','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR08','na')">N/A</button></div></div>
+  <div class="step" id="step-BR09"><span class="step-code">BR09</span><span class="step-text">All screws and fasteners checked for tightness</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR09','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR09','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR09','na')">N/A</button></div></div>
+  <div class="step" id="step-BR10"><span class="step-code">BR10</span><span class="step-text">Anti-vibration mounts inspected for wear and correct, secure placement</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR10','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR10','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR10','na')">N/A</button></div></div>
+
+  <div class="section-heading">Functional Checks</div>
+  <div class="step" id="step-BR11"><span class="step-code">BR11</span><span class="step-text">Unit starts smoothly on fresh fuel</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR11','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR11','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR11','na')">N/A</button></div></div>
+  <div class="step" id="step-BR12"><span class="step-code">BR12</span><span class="step-text">Engine idles consistently without stalling</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR12','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR12','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR12','na')">N/A</button></div></div>
+  <div class="step" id="step-BR13"><span class="step-code">BR13</span><span class="step-text">Throttle trigger operates smoothly and returns to idle</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR13','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR13','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR13','na')">N/A</button></div></div>
+  <div class="step" id="step-BR14"><span class="step-code">BR14</span><span class="step-text">Master Control Lever locks and releases throttle correctly</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR14','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR14','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR14','na')">N/A</button></div></div>
+  <div class="step" id="step-BR15"><span class="step-code">BR15</span><span class="step-text">Stop switch reliably stops the engine</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR15','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR15','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR15','na')">N/A</button></div></div>
+  <div class="step" id="step-BR16"><span class="step-code">BR16</span><span class="step-text">Unit shuts down smoothly</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR16','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR16','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR16','na')">N/A</button></div></div>
+
+  <div class="section-heading">Storage &amp; Compliance</div>
+  <div class="step" id="step-BR17"><span class="step-code">BR17</span><span class="step-text">Fuel tank drained and engine run to fuel starvation prior to storage</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR17','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR17','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR17','na')">N/A</button></div></div>
+  <div class="step" id="step-BR18"><span class="step-code">BR18</span><span class="step-text">QR sticker present and readable</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR18','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR18','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR18','na')">N/A</button></div></div>
+  <div class="step" id="step-BR19"><span class="step-code">BR19</span><span class="step-text">Unit number clearly visible inside air filter cover</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('BR19','pass')">Pass</button><button class="btn btn-flag" onclick="setState('BR19','flag')">Flag</button><button class="btn btn-na" onclick="setState('BR19','na')">N/A</button></div></div>
+
+  <div class="section-heading">Records / Observations</div>
+  <div class="record-row"><div class="record-label">BRR01 — Spark plug condition (colour, wear)</div><textarea class="record-input" id="rec-BRR01" placeholder="e.g. tan/brown — healthy, or describe condition…"></textarea></div>
+  <div class="record-row"><div class="record-label">BRR02 — Parts replaced</div><textarea class="record-input" id="rec-BRR02" placeholder="List parts or leave blank…"></textarea></div>
+  <div class="record-row"><div class="record-label">BRR03 — Power or starting issues observed</div><textarea class="record-input" id="rec-BRR03" placeholder="Describe or leave blank…"></textarea></div>
+
+  <div class="warning-bar" id="warningBar">Complete all required steps before submitting.</div>
+  <div class="submit-area">
+    <button class="submit-btn" onclick="handleSubmit()">Complete &amp; Generate PDF</button>
+    <p class="submit-note">Generates a PDF service record ready to upload to Rentman</p>
+  </div>
+</div>
+
+<div class="completion" id="completionScreen">
+  <div class="completion-icon">✓</div>
+  <div class="completion-title">Service Complete</div>
+  <div class="completion-sub" id="completionSub"></div>
+  <div class="ref-block">
+    <div class="ref-label">Rentman Reference</div>
+    <div class="ref-number" id="refNumber">—</div>
+    <div class="rentman-note">Save PDF to Rentman using this filename</div>
+  </div>
+  <div class="flagged-notice" id="flaggedNotice" style="display:none;">
+    <div class="flagged-notice-title">⚑ Flagged Items</div>
+    <div id="flaggedList"></div>
+  </div>
+  <button class="pdf-btn" onclick="generatePDF()">Download PDF Record</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const STEPS = ['BR01','BR02','BR03','BR04','BR05','BR06','BR07','BR08','BR09','BR10',
+               'BR11','BR12','BR13','BR14','BR15','BR16','BR17','BR18','BR19'];
+const STEP_TEXT = {
+  BR01:'Unit has been cleaned prior to inspection',
+  BR02:'Cooling fins and fan housing clear of debris',
+  BR03:'Air filter inspected and blown out with compressed air — replace immediately if damaged or airflow symptoms present',
+  BR04:'Spark plug inspected — free of carbon build-up, oil deposits and ceramic cracks (colour noted in BRR01: oily = rich, white = lean, tan/brown = healthy)',
+  BR05:'Spark arrestor screen clean and unobstructed',
+  BR06:'Fuel filter free of dirt and cracks',
+  BR07:'Fuel cap seal in good condition',
+  BR08:'Recoil starter cord in good condition — no fraying, pulls and retracts smoothly',
+  BR09:'All screws and fasteners checked for tightness',
+  BR10:'Anti-vibration mounts inspected for wear and correct, secure placement',
+  BR11:'Unit starts smoothly on fresh fuel',
+  BR12:'Engine idles consistently without stalling',
+  BR13:'Throttle trigger operates smoothly and returns to idle',
+  BR14:'Master Control Lever locks and releases throttle correctly',
+  BR15:'Stop switch reliably stops the engine',
+  BR16:'Unit shuts down smoothly',
+  BR17:'Fuel tank drained and engine run to fuel starvation prior to storage',
+  BR18:'QR sticker present and readable',
+  BR19:'Unit number clearly visible inside air filter cover'
+};
+const RECORDS = [
+  { id: 'BRR01', label: 'Spark plug condition (colour, wear)' },
+  { id: 'BRR02', label: 'Parts replaced' },
+  { id: 'BRR03', label: 'Power or starting issues observed' }
+];
+const PAGE_CONFIG = { title: 'BR600 Backpack Blower Annual Service', sopVersion: 'v0.1', rentmanPrefix: 'br600' };
+</script>
+<script src="checklist.js"></script>
+<script>initChecklist();</script>
+</body>
+</html>
