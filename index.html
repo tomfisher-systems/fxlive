@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FX Live — Equipment Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --amber: #f0b429;
+    --amber-dim: #a07820;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 48px;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--surface);
+    border-bottom: 2px solid var(--amber);
+    padding: 18px 20px 14px;
+  }
+
+  .brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    padding: 20px 20px 8px;
+  }
+
+  /* CARD GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0 14px;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s, background 0.15s;
+    min-height: 90px;
+  }
+
+  .card.live {
+    border-color: var(--amber-dim);
+    cursor: pointer;
+  }
+
+  .card.live:active {
+    background: #1e2430;
+    border-color: var(--amber);
+  }
+
+  .card.soon {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  .card-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.15;
+    color: var(--text);
+  }
+
+  .card-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.3;
+  }
+
+  .card-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 3px;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .badge-live {
+    background: rgba(240, 180, 41, 0.15);
+    color: var(--amber);
+    border: 1px solid var(--amber-dim);
+  }
+
+  .badge-soon {
+    background: var(--border);
+    color: var(--text-muted);
+    border: 1px solid transparent;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 16px;
+    color: var(--amber);
+    opacity: 0.7;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 18px 14px 0;
+  }
+
+  /* FOOTER NOTE */
+  .footer-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 28px 20px 0;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="brand">FX Live — Equipment Service</div>
+  <div class="title">What are you servicing?</div>
+  <div class="subtitle">Select equipment to open its service checklist</div>
+</div>
+
+<!-- SNOW MACHINES -->
+<div class="section-label">Snow Machines</div>
+<div class="grid">
+
+  <a class="card live" href="fx500-checklist.html">
+    <span class="arrow">›</span>
+    <div class="card-name">FX500</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-live">Available</span>
+  </a>
+
+  <div class="card soon">
+    <div class="card-name">SB200</div>
+    <div class="card-sub">Annual service &amp; condition assessment</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+  <div class="card soon">
+    <div class="card-name">SB200 Booster</div>
+    <div class="card-sub">Pre-deployment check</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+  <div class="card soon">
+    <div class="card-name">SnowPro</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- FLUID SYSTEM -->
+<div class="section-label">Fluid System</div>
+<div class="grid">
+
+  <a class="card live" href="sprayhead-checklist.html">
+    <span class="arrow">›</span>
+    <div class="card-name">Spray Head</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-live">Available</span>
+  </a>
+
+  <div class="card soon">
+    <div class="card-name">Lance</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+  <div class="card soon">
+    <div class="card-name">De-Duster</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+  <a class="card live" href="hpp-checklist.html">
+    <span class="arrow">›</span>
+    <div class="card-name">High Pressure Pump</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-live">Available</span>
+  </a>
+
+  <a class="card live" href="watertank-checklist.html">
+    <span class="arrow">›</span>
+    <div class="card-name">Water Tank</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-live">Available</span>
+  </a>
+
+
+</div>
+
+<div class="divider"></div>
+
+<!-- POWER & PLANT -->
+<div class="section-label">Power &amp; Plant</div>
+<div class="grid">
+
+  <div class="card soon">
+    <div class="card-name">Petrol Generator</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+  <div class="card soon">
+    <div class="card-name">Petrol Pump</div>
+    <div class="card-sub">Honda WB30XT — annual service</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+  <div class="card soon">
+    <div class="card-name">Air Compressor</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+  <div class="card soon">
+    <div class="card-name">Bore Pump</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- DRESS & CLEAR KIT AND TOOLS -->
+<div class="section-label">Dress &amp; Clear Kit and Tools</div>
+<div class="grid">
+
+  <a class="card live" href="rig-checklist.html">
+    <span class="arrow">›</span>
+    <div class="card-name">Dressing Rig</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-live">Available</span>
+  </a>
+
+  <a class="card live" href="br600-checklist.html">
+    <span class="arrow">›</span>
+    <div class="card-name">BR600</div>
+    <div class="card-sub">Backpack blower — annual service</div>
+    <span class="card-badge badge-live">Available</span>
+  </a>
+
+  <div class="card soon">
+    <div class="card-name">MEGAVAC</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+  <div class="card soon">
+    <div class="card-name">Standard Tool Kit</div>
+    <div class="card-sub">Annual inspection</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- WAX KIT -->
+<div class="section-label">Wax Kit</div>
+<div class="grid">
+
+  <div class="card soon">
+    <div class="card-name">Wax Rig</div>
+    <div class="card-sub">Annual service</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+  <div class="card soon">
+    <div class="card-name">Wax Safety Kit</div>
+    <div class="card-sub">Annual inspection</div>
+    <span class="card-badge badge-soon">Coming soon</span>
+  </div>
+
+</div>
+
+<p class="footer-note">Checklists generate a PDF service record on completion.<br>Upload directly to the relevant unit in Rentman.</p>
+
+</body>
+</html>
