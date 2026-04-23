@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spray Head Annual Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <span class="brand">FX Live — Equipment Service</span>
+    <span class="version-tag">SOP v0.1-draft</span>
+  </div>
+  <div class="page-title">Spray Head Annual Service</div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="progress-label" id="progressLabel">0 of 17 steps complete</div>
+</div>
+
+<div class="meta-grid">
+  <div class="meta-field">
+    <span class="meta-label">Engineer *</span>
+    <input class="meta-input" id="engineer" type="text" placeholder="Required" autocomplete="off">
+  </div>
+  <div class="meta-field">
+    <span class="meta-label">Unit ID *</span>
+    <input class="meta-input" id="unitId" type="text" placeholder="Required" autocomplete="off">
+  </div>
+  <div class="meta-field full-width">
+    <span class="meta-label">Date</span>
+    <input class="meta-input" id="dateField" type="date">
+  </div>
+</div>
+
+<div id="checklistBody">
+  <div class="section-heading">Inspection &amp; Functional Checks</div>
+
+  <div class="step" id="step-SH01">
+    <div class="step-top">
+      <span class="step-code">SH01</span>
+      <span class="step-text">Unit has been cleaned prior to inspection</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH01','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH01','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH01">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH01" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH02">
+    <div class="step-top">
+      <span class="step-code">SH02</span>
+      <span class="step-text">Y Strainer has been inspected and cleaned if necessary</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH02','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH02','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH02">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH02" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH03">
+    <div class="step-top">
+      <span class="step-code">SH03</span>
+      <span class="step-text">New 22×2 o-ring fitted to Y-strainer cap, seated well and lubricated with a small amount of Molykote 111</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH03','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH03','flag')">Flag</button>
+        <button class="btn btn-na" onclick="setState('SH03','na')">N/A</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH03">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH03" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH04">
+    <div class="step-top">
+      <span class="step-code">SH04</span>
+      <span class="step-text">All hose clips are correctly sized</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH04','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH04','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH04">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH04" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH05">
+    <div class="step-top">
+      <span class="step-code">SH05</span>
+      <span class="step-text">Jets are clear and correct size (4002)</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH05','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH05','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH05">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH05" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH06">
+    <div class="step-top">
+      <span class="step-code">SH06</span>
+      <span class="step-text">Ball valve tap operates smoothly and does not wobble</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH06','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH06','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH06">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH06" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH07">
+    <div class="step-top">
+      <span class="step-code">SH07</span>
+      <span class="step-text">Series 21 male connector is free of corrosion</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH07','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH07','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH07">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH07" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH08">
+    <div class="step-top">
+      <span class="step-code">SH08</span>
+      <span class="step-text">Water line binding in good condition and secured at regular intervals</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH08','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH08','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH08">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH08" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH09">
+    <div class="step-top">
+      <span class="step-code">SH09</span>
+      <span class="step-text">Anti-static hose connected to dressing rig and checked for air leakages</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH09','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH09','flag')">Flag</button>
+        <button class="btn btn-na" onclick="setState('SH09','na')">N/A</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH09">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH09" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH10">
+    <div class="step-top">
+      <span class="step-code">SH10</span>
+      <span class="step-text">Anti-static hose in good condition with no more than 3 visible repairs along its length</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH10','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH10','flag')">Flag</button>
+        <button class="btn btn-na" onclick="setState('SH10','na')">N/A</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH10">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH10" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH11">
+    <div class="step-top">
+      <span class="step-code">SH11</span>
+      <span class="step-text">Spray head is earthed — continuity test passed from exposed metal at head to camlock</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH11','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH11','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH11">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH11" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH12">
+    <div class="step-top">
+      <span class="step-code">SH12</span>
+      <span class="step-text">No leaks along the length of the water line when connected to High Pressure Pump with ball valve in the SHUT position</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH12','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH12','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH12">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH12" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH13">
+    <div class="step-top">
+      <span class="step-code">SH13</span>
+      <span class="step-text">No leaks from any component (including jets) after the ball valve when connected to High Pressure Pump with ball valve in the OPEN position</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH13','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH13','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH13">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH13" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH14">
+    <div class="step-top">
+      <span class="step-code">SH14</span>
+      <span class="step-text">Jets produce a consistent, even spray pattern across the full arc</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH14','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH14','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH14">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH14" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH15">
+    <div class="step-top">
+      <span class="step-code">SH15</span>
+      <span class="step-text">Jets are correctly oriented — spray inward, converging on the product outlet</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH15','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH15','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH15">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH15" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH16">
+    <div class="step-top">
+      <span class="step-code">SH16</span>
+      <span class="step-text">Water line blown through with compressed air prior to storage</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH16','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH16','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH16">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH16" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="step" id="step-SH17">
+    <div class="step-top">
+      <span class="step-code">SH17</span>
+      <span class="step-text">QR sticker present, readable and in good condition</span>
+      <div class="step-buttons">
+        <button class="btn btn-pass" onclick="setState('SH17','pass')">Pass</button>
+        <button class="btn btn-flag" onclick="setState('SH17','flag')">Flag</button>
+      </div>
+    </div>
+    <div class="flag-reason" id="flag-reason-SH17">
+      <div class="flag-reason-label">Reason for flag</div>
+      <textarea class="flag-reason-input" id="flag-reason-input-SH17" placeholder="Describe the issue…"></textarea>
+    </div>
+  </div>
+
+  <div class="section-heading">Records / Observations</div>
+  <div class="record-row">
+    <div class="record-label">SHR01 — Parts replaced</div>
+    <textarea class="record-input" id="rec-SHR01" placeholder="List any parts replaced, or leave blank if none…"></textarea>
+  </div>
+
+  <div class="warning-bar" id="warningBar"></div>
+  <div class="submit-area">
+    <button class="submit-btn" onclick="handleSubmit()">Complete &amp; Generate PDF</button>
+    <p class="submit-note">Generates a PDF service record ready to upload to Rentman</p>
+  </div>
+</div>
+
+<div class="completion" id="completionScreen">
+  <div class="completion-icon">✓</div>
+  <div class="completion-title">Service Complete</div>
+  <div class="completion-sub" id="completionSub"></div>
+  <div class="ref-block">
+    <div class="ref-label">Rentman Reference</div>
+    <div class="ref-number" id="refNumber">—</div>
+    <div class="rentman-note">Save PDF to Rentman using this filename</div>
+  </div>
+  <div class="flagged-notice" id="flaggedNotice" style="display:none;">
+    <div class="flagged-notice-title">⚑ Flagged Items</div>
+    <div id="flaggedList"></div>
+  </div>
+  <button class="pdf-btn" onclick="generatePDF()">Download PDF Record</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const STEPS = ['SH01','SH02','SH03','SH04','SH05','SH06','SH07','SH08',
+               'SH09','SH10','SH11','SH12','SH13','SH14','SH15','SH16','SH17'];
+const STEP_TEXT = {
+  SH01:'Unit has been cleaned prior to inspection',
+  SH02:'Y Strainer has been inspected and cleaned if necessary',
+  SH03:'New 22×2 o-ring fitted to Y-strainer cap, seated well and lubricated with a small amount of Molykote 111',
+  SH04:'All hose clips are correctly sized',
+  SH05:'Jets are clear and correct size (4002)',
+  SH06:'Ball valve tap operates smoothly and does not wobble',
+  SH07:'Series 21 male connector is free of corrosion',
+  SH08:'Water line binding in good condition and secured at regular intervals',
+  SH09:'Anti-static hose connected to dressing rig and checked for air leakages',
+  SH10:'Anti-static hose in good condition with no more than 3 visible repairs along its length',
+  SH11:'Spray head is earthed — continuity test passed from exposed metal at head to camlock',
+  SH12:'No leaks along the length of the water line when connected to High Pressure Pump with ball valve in the SHUT position',
+  SH13:'No leaks from any component (including jets) after the ball valve when connected to High Pressure Pump with ball valve in the OPEN position',
+  SH14:'Jets produce a consistent, even spray pattern across the full arc',
+  SH15:'Jets are correctly oriented — spray inward, converging on the product outlet',
+  SH16:'Water line blown through with compressed air prior to storage',
+  SH17:'QR sticker present, readable and in good condition'
+};
+const RECORDS = [{ id: 'SHR01', label: 'Parts replaced' }];
+const PAGE_CONFIG = {
+  title: 'Spray Head Annual Service',
+  sopVersion: 'v0.1-draft',
+  rentmanPrefix: 'sprayhead'
+};
+</script>
+<script src="checklist.js"></script>
+<script>initChecklist();</script>
+</body>
+</html>
