@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dressing Rig Annual Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header" id="mainHeader">
+  <div class="header-top">
+    <span class="brand">FX Live — Equipment Service</span>
+    <span class="version-tag">SOP v1.0</span>
+  </div>
+  <div class="page-title">Dressing Rig Annual Service</div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="progress-label" id="progressLabel">0 of 19 steps complete</div>
+</div>
+
+<div class="meta-grid" id="metaGrid">
+  <div class="meta-field">
+    <span class="meta-label">Engineer</span>
+    <input class="meta-input" id="engineer" type="text" placeholder="Name" autocomplete="off">
+  </div>
+  <div class="meta-field">
+    <span class="meta-label">Machine ID</span>
+    <input class="meta-input" id="unitId" type="text" placeholder="e.g. RIG-001" autocomplete="off">
+  </div>
+  <div class="meta-field full-width">
+    <span class="meta-label">Date</span>
+    <input class="meta-input" id="dateField" type="date">
+  </div>
+</div>
+
+<!-- Completion nav header -->
+<div class="header-completion" id="completionHeader">
+  <div class="completion-header-label">FX Live — Equipment Service</div>
+  <div class="completion-header-btns">
+    <button class="nav-btn nav-btn-more" onclick="doMore()">Do more</button>
+    <button class="nav-btn nav-btn-home" onclick="goHome()">Take me home</button>
+  </div>
+</div>
+
+<div id="checklistBody">
+  <div class="section-heading">Compliance &amp; Visual</div>
+  <div class="step" id="step-D01"><span class="step-code">D01</span><span class="step-text">PAT test passed and label updated (date recorded below)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D01','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D01','flag')">Flag</button><button class="btn btn-na" onclick="setState('D01','na')">N/A</button></div></div>
+  <div class="step" id="step-D02"><span class="step-code">D02</span><span class="step-text">QR sticker is present, readable and well stuck</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D02','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D02','flag')">Flag</button><button class="btn btn-na" onclick="setState('D02','na')">N/A</button></div></div>
+  <div class="step" id="step-D03"><span class="step-code">D03</span><span class="step-text">Unit is clean</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D03','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D03','flag')">Flag</button><button class="btn btn-na" onclick="setState('D03','na')">N/A</button></div></div>
+  <div class="step" id="step-D04"><span class="step-code">D04</span><span class="step-text">Hopper is clear</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D04','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D04','flag')">Flag</button><button class="btn btn-na" onclick="setState('D04','na')">N/A</button></div></div>
+  <div class="step" id="step-D05"><span class="step-code">D05</span><span class="step-text">Airlocks are clear</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D05','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D05','flag')">Flag</button><button class="btn btn-na" onclick="setState('D05','na')">N/A</button></div></div>
+  <div class="step" id="step-D06"><span class="step-code">D06</span><span class="step-text">Airlock seals are in good condition and create continuous seal</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D06','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D06','flag')">Flag</button><button class="btn btn-na" onclick="setState('D06','na')">N/A</button></div></div>
+  <div class="step" id="step-D07"><span class="step-code">D07</span><span class="step-text">Agitator rubbers are in good condition (good length, no splits)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D07','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D07','flag')">Flag</button><button class="btn btn-na" onclick="setState('D07','na')">N/A</button></div></div>
+  <div class="step" id="step-D13"><span class="step-code">D13</span><span class="step-text">Control box wiring in good condition (no loose wires, items, signs of heat or moisture)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D13','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D13','flag')">Flag</button><button class="btn btn-na" onclick="setState('D13','na')">N/A</button></div></div>
+  <div class="step" id="step-D19"><span class="step-code">D19</span><span class="step-text">Filters clean and in good condition</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D19','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D19','flag')">Flag</button><button class="btn btn-na" onclick="setState('D19','na')">N/A</button></div></div>
+
+  <div class="section-heading">Mechanical &amp; Functional</div>
+  <div class="step" id="step-D08"><span class="step-code">D08</span><span class="step-text">Gate operates smoothly</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D08','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D08','flag')">Flag</button><button class="btn btn-na" onclick="setState('D08','na')">N/A</button></div></div>
+  <div class="step" id="step-D09"><span class="step-code">D09</span><span class="step-text">Chain tension is well balanced</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D09','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D09','flag')">Flag</button><button class="btn btn-na" onclick="setState('D09','na')">N/A</button></div></div>
+  <div class="step" id="step-D10"><span class="step-code">D10</span><span class="step-text">Chain adequately lubricated</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D10','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D10','flag')">Flag</button><button class="btn btn-na" onclick="setState('D10','na')">N/A</button></div></div>
+  <div class="step" id="step-D11"><span class="step-code">D11</span><span class="step-text">All bearings greased</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D11','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D11','flag')">Flag</button><button class="btn btn-na" onclick="setState('D11','na')">N/A</button></div></div>
+  <div class="step" id="step-D12"><span class="step-code">D12</span><span class="step-text">All screws and bolts functional and tightened</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D12','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D12','flag')">Flag</button><button class="btn btn-na" onclick="setState('D12','na')">N/A</button></div></div>
+  <div class="step" id="step-D14"><span class="step-code">D14</span><span class="step-text">Emergency stop buttons functional</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D14','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D14','flag')">Flag</button><button class="btn btn-na" onclick="setState('D14','na')">N/A</button></div></div>
+  <div class="step" id="step-D15"><span class="step-code">D15</span><span class="step-text">Wireless function tested (where applicable)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D15','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D15','flag')">Flag</button><button class="btn btn-na" onclick="setState('D15','na')">N/A</button></div></div>
+  <div class="step" id="step-D16"><span class="step-code">D16</span><span class="step-text">De-dust function tested (where applicable)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D16','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D16','flag')">Flag</button><button class="btn btn-na" onclick="setState('D16','na')">N/A</button></div></div>
+  <div class="step" id="step-D17"><span class="step-code">D17</span><span class="step-text">Tyres hold pressure</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D17','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D17','flag')">Flag</button><button class="btn btn-na" onclick="setState('D17','na')">N/A</button></div></div>
+  <div class="step" id="step-D18"><span class="step-code">D18</span><span class="step-text">Wheels lubricated</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('D18','pass')">Pass</button><button class="btn btn-flag" onclick="setState('D18','flag')">Flag</button><button class="btn btn-na" onclick="setState('D18','na')">N/A</button></div></div>
+
+  <div class="section-heading">Records / Observations</div>
+  <div class="record-row"><div class="record-label">DR01 — PAT date</div><input class="meta-input" id="rec-DR01" type="date"></div>
+  <div class="record-row"><div class="record-label">DR02 — Inspection notes</div><textarea class="record-input" id="rec-DR02" placeholder="Notes or leave blank…"></textarea></div>
+  <div class="record-row"><div class="record-label">DR03 — Parts replaced</div><textarea class="record-input" id="rec-DR03" placeholder="List parts or leave blank…"></textarea></div>
+  <div class="record-row"><div class="record-label">DR04 — Rust / damage observed</div><textarea class="record-input" id="rec-DR04" placeholder="Describe or leave blank…"></textarea></div>
+  <div class="record-row"><div class="record-label">DR05 — Mileage</div><input class="meta-input record-input short" id="rec-DR05" type="number" placeholder="km"></div>
+
+  <div class="warning-bar" id="warningBar">Complete all required steps before submitting.</div>
+  <div class="submit-area">
+    <button class="submit-btn" onclick="handleSubmit()">Complete &amp; Generate PDF</button>
+    <p class="submit-note">Generates a PDF service record ready to upload to Rentman</p>
+  </div>
+</div>
+
+<div class="completion" id="completionScreen">
+  <div class="completion-icon">✓</div>
+  <div class="completion-title">Service Complete</div>
+  <div class="completion-sub" id="completionSub"></div>
+  <div class="ref-block">
+    <div class="ref-label">Rentman Reference</div>
+    <div class="ref-number" id="refNumber">—</div>
+    <div class="rentman-note">Save PDF to Rentman using this filename</div>
+  </div>
+  <div class="flagged-notice" id="flaggedNotice" style="display:none;">
+    <div class="flagged-notice-title">⚑ Flagged Items</div>
+    <div id="flaggedList"></div>
+  </div>
+  <div id="pdfGateNote" class="pdf-gate-note">Download the PDF and upload it to Rentman to complete this record.</div>
+  <button class="pdf-btn" id="pdfBtn" onclick="generatePDF()">Download PDF Record</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const STEPS = ['D01','D02','D03','D04','D05','D06','D07','D13','D19',
+               'D08','D09','D10','D11','D12','D14','D15','D16','D17','D18'];
+const STEP_TEXT = {
+  D01:'PAT test passed and label updated (date recorded below)',
+  D02:'QR sticker is present, readable and well stuck',
+  D03:'Unit is clean',
+  D04:'Hopper is clear',
+  D05:'Airlocks are clear',
+  D06:'Airlock seals are in good condition and create continuous seal',
+  D07:'Agitator rubbers are in good condition (good length, no splits)',
+  D08:'Gate operates smoothly',
+  D09:'Chain tension is well balanced',
+  D10:'Chain adequately lubricated',
+  D11:'All bearings greased',
+  D12:'All screws and bolts functional and tightened',
+  D13:'Control box wiring in good condition (no loose wires, items, signs of heat or moisture)',
+  D14:'Emergency stop buttons functional',
+  D15:'Wireless function tested (where applicable)',
+  D16:'De-dust function tested (where applicable)',
+  D17:'Tyres hold pressure',
+  D18:'Wheels lubricated',
+  D19:'Filters clean and in good condition'
+};
+const RECORDS = [
+  { id: 'DR01', label: 'PAT date' },
+  { id: 'DR02', label: 'Inspection notes' },
+  { id: 'DR03', label: 'Parts replaced' },
+  { id: 'DR04', label: 'Rust / damage observed' },
+  { id: 'DR05', label: 'Mileage' }
+];
+const PAGE_CONFIG = { title: 'Dressing Rig Annual Service', sopVersion: 'v1.0', rentmanPrefix: 'rig' };
+</script>
+<script src="checklist.js"></script>
+<script>initChecklist();</script>
+</body>
+</html>
