@@ -159,6 +159,75 @@ body {
   padding: 0 8px;
 }
 
+/* ---- PHOTO UPLOAD ---- */
+.flag-photo-wrap {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.flag-photo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  border-radius: 5px;
+  padding: 9px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  align-self: flex-start;
+}
+
+.flag-photo-btn:active { border-color: var(--amber); color: var(--amber); }
+
+.flag-photo-icon { font-style: normal; font-size: 15px; }
+
+.flag-photo-input-hidden {
+  display: none;
+}
+
+.flag-photo-preview {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  object-fit: contain;
+}
+
+.flag-photo-remove {
+  background: none;
+  border: none;
+  color: var(--flag);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  align-self: flex-start;
+  text-decoration: underline;
+}
+
+/* Thumbnail in completion flagged list */
+.flagged-thumb-wrap {
+  margin-top: 8px;
+}
+
+.flagged-thumb {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  object-fit: contain;
+}
+
 /* ---- PROGRESS ---- */
 .progress-wrap {
   height: var(--progress-height);
