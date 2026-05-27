@@ -344,5 +344,94 @@
 
 <p class="footer-note">Checklists generate a PDF service record on completion.<br>Upload directly to the relevant unit in Rentman.</p>
 
+<!-- ONBOARDING BANNER — first visit only -->
+<div id="onboardingBanner" style="display:none;">
+  <div class="onboarding-inner">
+    <span class="onboarding-icon">⚑</span>
+    <span class="onboarding-text">PDF upload to Rentman is your completion record. This app does not store your data.</span>
+    <button class="onboarding-close" onclick="dismissOnboarding()">✕</button>
+  </div>
+</div>
+
+<style>
+  #onboardingBanner {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #1a2a1a;
+    border-top: 1px solid #238636;
+    padding: 0;
+    z-index: 200;
+    animation: slideUp 0.4s ease;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+
+  .onboarding-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .onboarding-icon {
+    color: #3fb950;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .onboarding-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: #b0bac6;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .onboarding-close {
+    background: none;
+    border: none;
+    color: #8b949e;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 6px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .onboarding-close:active { color: #f0b429; }
+</style>
+
+<script>
+  (function() {
+    try {
+      if (!localStorage.getItem('fieldcheck-onboarding-seen')) {
+        const banner = document.getElementById('onboardingBanner');
+        if (banner) {
+          banner.style.display = 'block';
+          // Auto-dismiss after 8 seconds
+          setTimeout(dismissOnboarding, 8000);
+        }
+      }
+    } catch(e) {}
+  })();
+
+  function dismissOnboarding() {
+    try {
+      const banner = document.getElementById('onboardingBanner');
+      if (!banner) return;
+      banner.style.transition = 'opacity 0.4s, transform 0.4s';
+      banner.style.opacity = '0';
+      banner.style.transform = 'translateY(100%)';
+      setTimeout(() => banner.style.display = 'none', 400);
+      localStorage.setItem('fieldcheck-onboarding-seen', '1');
+    } catch(e) {}
+  }
+</script>
+
 </body>
 </html>

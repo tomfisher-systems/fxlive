@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="header">
+<div class="header" id="mainHeader">
   <div class="header-top">
     <span class="brand">FX Live — Equipment Service</span>
     <span class="version-tag">SOP v0.1-draft</span>
@@ -20,7 +20,7 @@
   <div class="progress-label" id="progressLabel">0 of 17 steps complete</div>
 </div>
 
-<div class="meta-grid">
+<div class="meta-grid" id="metaGrid">
   <div class="meta-field">
     <span class="meta-label">Engineer *</span>
     <input class="meta-input" id="engineer" type="text" placeholder="Required" autocomplete="off">
@@ -32,6 +32,15 @@
   <div class="meta-field full-width">
     <span class="meta-label">Date</span>
     <input class="meta-input" id="dateField" type="date">
+  </div>
+</div>
+
+<!-- Completion nav header -->
+<div class="header-completion" id="completionHeader">
+  <div class="completion-header-label">FX Live — Equipment Service</div>
+  <div class="completion-header-btns">
+    <button class="nav-btn nav-btn-more" onclick="doMore()">Do more</button>
+    <button class="nav-btn nav-btn-home" onclick="goHome()">Take me home</button>
   </div>
 </div>
 
@@ -322,7 +331,8 @@
     <div class="flagged-notice-title">⚑ Flagged Items</div>
     <div id="flaggedList"></div>
   </div>
-  <button class="pdf-btn" onclick="generatePDF()">Download PDF Record</button>
+  <div id="pdfGateNote" class="pdf-gate-note">Download the PDF and upload it to Rentman to complete this record.</div>
+  <button class="pdf-btn" id="pdfBtn" onclick="generatePDF()">Download PDF Record</button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>

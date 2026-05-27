@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FX500 Annual Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header" id="mainHeader">
+  <div class="header-top">
+    <span class="brand">FX Live — Equipment Service</span>
+    <span class="version-tag">SOP v1.2</span>
+  </div>
+  <div class="page-title">FX500 Annual Service</div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="progress-label" id="progressLabel">0 of 20 steps complete</div>
+</div>
+
+<div class="meta-grid" id="metaGrid">
+  <div class="meta-field">
+    <span class="meta-label">Engineer</span>
+    <input class="meta-input" id="engineer" type="text" placeholder="Name" autocomplete="off">
+  </div>
+  <div class="meta-field">
+    <span class="meta-label">Machine ID</span>
+    <input class="meta-input" id="unitId" type="text" placeholder="e.g. FX500-001" autocomplete="off">
+  </div>
+  <div class="meta-field full-width">
+    <span class="meta-label">Date</span>
+    <input class="meta-input" id="dateField" type="date">
+  </div>
+</div>
+
+<!-- Completion nav header -->
+<div class="header-completion" id="completionHeader">
+  <div class="completion-header-label">FX Live — Equipment Service</div>
+  <div class="completion-header-btns">
+    <button class="nav-btn nav-btn-more" onclick="doMore()">Do more</button>
+    <button class="nav-btn nav-btn-home" onclick="goHome()">Take me home</button>
+  </div>
+</div>
+
+<div id="checklistBody">
+  <div class="section-heading">Inspection &amp; Functional Checks</div>
+
+  <div class="step" id="step-S01"><span class="step-code">S01</span><span class="step-text">All parts are present</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S01','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S01','flag')">Flag</button><button class="btn btn-na" onclick="setState('S01','na')">N/A</button></div></div>
+  <div class="step" id="step-S02"><span class="step-code">S02</span><span class="step-text">Internal inspections completed (panels removed as required)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S02','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S02','flag')">Flag</button><button class="btn btn-na" onclick="setState('S02','na')">N/A</button></div></div>
+  <div class="step" id="step-S03"><span class="step-code">S03</span><span class="step-text">Machine is dry of any moisture contamination (including soundproof foam)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S03','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S03','flag')">Flag</button><button class="btn btn-na" onclick="setState('S03','na')">N/A</button></div></div>
+  <div class="step" id="step-S04"><span class="step-code">S04</span><span class="step-text">Flight case is in good condition, free of moisture, dust and debris</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S04','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S04','flag')">Flag</button><button class="btn btn-na" onclick="setState('S04','na')">N/A</button></div></div>
+  <div class="step" id="step-S05"><span class="step-code">S05</span><span class="step-text">Machine has CFORM and 13amp compatibility</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S05','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S05','flag')">Flag</button><button class="btn btn-na" onclick="setState('S05','na')">N/A</button></div></div>
+  <div class="step" id="step-S06"><span class="step-code">S06</span><span class="step-text">Camlocks secured with cable tie</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S06','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S06','flag')">Flag</button><button class="btn btn-na" onclick="setState('S06','na')">N/A</button></div></div>
+  <div class="step" id="step-S07"><span class="step-code">S07</span><span class="step-text">Fluid line secure</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S07','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S07','flag')">Flag</button><button class="btn btn-na" onclick="setState('S07','na')">N/A</button></div></div>
+  <div class="step" id="step-S08"><span class="step-code">S08</span><span class="step-text">Excess fluid line routed back into hose at rear of machine</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S08','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S08','flag')">Flag</button><button class="btn btn-na" onclick="setState('S08','na')">N/A</button></div></div>
+  <div class="step" id="step-S09"><span class="step-code">S09</span><span class="step-text">Snow output acceptable at high flake size</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S09','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S09','flag')">Flag</button><button class="btn btn-na" onclick="setState('S09','na')">N/A</button></div></div>
+  <div class="step" id="step-S10"><span class="step-code">S10</span><span class="step-text">Snow output acceptable at low flake size</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S10','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S10','flag')">Flag</button><button class="btn btn-na" onclick="setState('S10','na')">N/A</button></div></div>
+  <div class="step" id="step-S11"><span class="step-code">S11</span><span class="step-text">Onboard timer completes full cycle</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S11','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S11','flag')">Flag</button><button class="btn btn-na" onclick="setState('S11','na')">N/A</button></div></div>
+  <div class="step" id="step-S12"><span class="step-code">S12</span><span class="step-text">Setting returned to default (W-DMX, Wireless and Run Last Setting: OFF)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S12','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S12','flag')">Flag</button><button class="btn btn-na" onclick="setState('S12','na')">N/A</button></div></div>
+  <div class="step" id="step-S13"><span class="step-code">S13</span><span class="step-text">DMX functionality verified</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S13','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S13','flag')">Flag</button><button class="btn btn-na" onclick="setState('S13','na')">N/A</button></div></div>
+  <div class="step" id="step-S14"><span class="step-code">S14</span><span class="step-text">Bluetooth timer date/time correct and stored programs cleared</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S14','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S14','flag')">Flag</button><button class="btn btn-na" onclick="setState('S14','na')">N/A</button></div></div>
+  <div class="step" id="step-S15"><span class="step-code">S15</span><span class="step-text">PAT test passed and label updated (date recorded below)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S15','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S15','flag')">Flag</button><button class="btn btn-na" onclick="setState('S15','na')">N/A</button></div></div>
+  <div class="step" id="step-S16"><span class="step-code">S16</span><span class="step-text">System flushed with distilled water</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S16','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S16','flag')">Flag</button><button class="btn btn-na" onclick="setState('S16','na')">N/A</button></div></div>
+  <div class="step" id="step-S17"><span class="step-code">S17</span><span class="step-text">Number on machine matches flight case, QR present and readable by device</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S17','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S17','flag')">Flag</button><button class="btn btn-na" onclick="setState('S17','na')">N/A</button></div></div>
+  <div class="step" id="step-S18"><span class="step-code">S18</span><span class="step-text">All parts are returned to the machine tidily, with loose items sitting on top of cover</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S18','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S18','flag')">Flag</button><button class="btn btn-na" onclick="setState('S18','na')">N/A</button></div></div>
+  <div class="step" id="step-S19"><span class="step-code">S19</span><span class="step-text">Completed inspection sheet and quick start guide stored in plastic wallet</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S19','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S19','flag')">Flag</button><button class="btn btn-na" onclick="setState('S19','na')">N/A</button></div></div>
+  <div class="step" id="step-S20"><span class="step-code">S20</span><span class="step-text">Machine stored with silica gel and the side-flap closed</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('S20','pass')">Pass</button><button class="btn btn-flag" onclick="setState('S20','flag')">Flag</button><button class="btn btn-na" onclick="setState('S20','na')">N/A</button></div></div>
+
+  <div class="section-heading">Records / Observations</div>
+  <div class="record-row"><div class="record-label">R01 — PAT date</div><input class="meta-input" id="rec-R01" type="date"></div>
+  <div class="record-row"><div class="record-label">R02 — Internal inspection notes</div><textarea class="record-input" id="rec-R02" placeholder="Notes or leave blank…"></textarea></div>
+  <div class="record-row"><div class="record-label">R03 — Parts replaced</div><textarea class="record-input" id="rec-R03" placeholder="List parts or leave blank…"></textarea></div>
+  <div class="record-row"><div class="record-label">R04 — Rust / damage observed</div><textarea class="record-input" id="rec-R04" placeholder="Describe or leave blank…"></textarea></div>
+  <div class="record-row"><div class="record-label">R05 — Damaged screws (count)</div><input class="meta-input record-input short" id="rec-R05" type="number" placeholder="0"></div>
+  <div class="record-row"><div class="record-label">R06 — Missing screws (count)</div><input class="meta-input record-input short" id="rec-R06" type="number" placeholder="0"></div>
+
+  <div class="warning-bar" id="warningBar">Complete all required steps before submitting.</div>
+  <div class="submit-area">
+    <button class="submit-btn" onclick="handleSubmit()">Complete &amp; Generate PDF</button>
+    <p class="submit-note">Generates a PDF service record ready to upload to Rentman</p>
+  </div>
+</div>
+
+<div class="completion" id="completionScreen">
+  <div class="completion-icon">✓</div>
+  <div class="completion-title">Service Complete</div>
+  <div class="completion-sub" id="completionSub"></div>
+  <div class="ref-block">
+    <div class="ref-label">Rentman Reference</div>
+    <div class="ref-number" id="refNumber">—</div>
+    <div class="rentman-note">Save PDF to Rentman using this filename</div>
+  </div>
+  <div class="flagged-notice" id="flaggedNotice" style="display:none;">
+    <div class="flagged-notice-title">⚑ Flagged Items</div>
+    <div id="flaggedList"></div>
+  </div>
+  <div id="pdfGateNote" class="pdf-gate-note">Download the PDF and upload it to Rentman to complete this record.</div>
+  <button class="pdf-btn" id="pdfBtn" onclick="generatePDF()">Download PDF Record</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const STEPS = ['S01','S02','S03','S04','S05','S06','S07','S08','S09','S10',
+               'S11','S12','S13','S14','S15','S16','S17','S18','S19','S20'];
+const STEP_TEXT = {
+  S01: 'All parts are present',
+  S02: 'Internal inspections completed (panels removed as required)',
+  S03: 'Machine is dry of any moisture contamination (including soundproof foam)',
+  S04: 'Flight case is in good condition, free of moisture, dust and debris',
+  S05: 'Machine has CFORM and 13amp compatibility',
+  S06: 'Camlocks secured with cable tie',
+  S07: 'Fluid line secure',
+  S08: 'Excess fluid line routed back into hose at rear of machine',
+  S09: 'Snow output acceptable at high flake size',
+  S10: 'Snow output acceptable at low flake size',
+  S11: 'Onboard timer completes full cycle',
+  S12: 'Setting returned to default (W-DMX, Wireless and Run Last Setting: OFF)',
+  S13: 'DMX functionality verified',
+  S14: 'Bluetooth timer date/time correct and stored programs cleared',
+  S15: 'PAT test passed and label updated (date recorded below)',
+  S16: 'System flushed with distilled water',
+  S17: 'Number on machine matches flight case, QR present and readable by device',
+  S18: 'All parts are returned to the machine tidily, with loose items sitting on top of cover',
+  S19: 'Completed inspection sheet and quick start guide stored in plastic wallet',
+  S20: 'Machine stored with silica gel and the side-flap closed'
+};
+const RECORDS = [
+  { id: 'R01', label: 'PAT date' },
+  { id: 'R02', label: 'Internal inspection notes' },
+  { id: 'R03', label: 'Parts replaced' },
+  { id: 'R04', label: 'Rust / damage observed' },
+  { id: 'R05', label: 'Damaged screws (count)' },
+  { id: 'R06', label: 'Missing screws (count)' }
+];
+const PAGE_CONFIG = {
+  title: 'FX500 Annual Service',
+  sopVersion: 'v1.2',
+  rentmanPrefix: 'fx500'
+};
+</script>
+<script src="checklist.js"></script>
+<script>initChecklist();</script>
+</body>
+</html>

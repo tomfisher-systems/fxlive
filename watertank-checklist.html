@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water Tank Annual Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header" id="mainHeader">
+  <div class="header-top">
+    <span class="brand">FX Live — Equipment Service</span>
+    <span class="version-tag">SOP v1.0</span>
+  </div>
+  <div class="page-title">Water Tank Annual Service</div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="progress-label" id="progressLabel">0 of 10 steps complete</div>
+</div>
+
+<div class="meta-grid" id="metaGrid">
+  <div class="meta-field">
+    <span class="meta-label">Engineer</span>
+    <input class="meta-input" id="engineer" type="text" placeholder="Name" autocomplete="off">
+  </div>
+  <div class="meta-field">
+    <span class="meta-label">Tank ID</span>
+    <input class="meta-input" id="unitId" type="text" placeholder="e.g. WT-001" autocomplete="off">
+  </div>
+  <div class="meta-field full-width">
+    <span class="meta-label">Date</span>
+    <input class="meta-input" id="dateField" type="date">
+  </div>
+</div>
+
+<!-- Completion nav header -->
+<div class="header-completion" id="completionHeader">
+  <div class="completion-header-label">FX Live — Equipment Service</div>
+  <div class="completion-header-btns">
+    <button class="nav-btn nav-btn-more" onclick="doMore()">Do more</button>
+    <button class="nav-btn nav-btn-home" onclick="goHome()">Take me home</button>
+  </div>
+</div>
+
+<div id="checklistBody">
+  <div class="section-heading">Preparation &amp; Cleaning</div>
+  <div class="step" id="step-WT01"><span class="step-code">WT01</span><span class="step-text">Internal dirt and debris removed</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('WT01','pass')">Pass</button><button class="btn btn-flag" onclick="setState('WT01','flag')">Flag</button><button class="btn btn-na" onclick="setState('WT01','na')">N/A</button></div></div>
+  <div class="step" id="step-WT02"><span class="step-code">WT02</span><span class="step-text">Tank positioned to allow controlled drainage without water spillage</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('WT02','pass')">Pass</button><button class="btn btn-flag" onclick="setState('WT02','flag')">Flag</button><button class="btn btn-na" onclick="setState('WT02','na')">N/A</button></div></div>
+  <div class="step" id="step-WT03"><span class="step-code">WT03</span><span class="step-text">Tank exterior jetwashed</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('WT03','pass')">Pass</button><button class="btn btn-flag" onclick="setState('WT03','flag')">Flag</button><button class="btn btn-na" onclick="setState('WT03','na')">N/A</button></div></div>
+
+  <div class="section-heading">Disinfection</div>
+  <div class="step" id="step-WT04"><span class="step-code">WT04</span><span class="step-text">Tank filled completely with clean water</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('WT04','pass')">Pass</button><button class="btn btn-flag" onclick="setState('WT04','flag')">Flag</button><button class="btn btn-na" onclick="setState('WT04','na')">N/A</button></div></div>
+  <div class="step" id="step-WT05"><span class="step-code">WT05</span><span class="step-text">Milton added at correct dilution rate (600ml per 100L)</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('WT05','pass')">Pass</button><button class="btn btn-flag" onclick="setState('WT05','flag')">Flag</button><button class="btn btn-na" onclick="setState('WT05','na')">N/A</button></div></div>
+  <div class="step" id="step-WT06"><span class="step-code">WT06</span><span class="step-text">Disinfectant soak ≥15 minutes</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('WT06','pass')">Pass</button><button class="btn btn-flag" onclick="setState('WT06','flag')">Flag</button><button class="btn btn-na" onclick="setState('WT06','na')">N/A</button></div></div>
+  <div class="step" id="step-WT07"><span class="step-code">WT07</span><span class="step-text">Tank monitored for leaks during soak</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('WT07','pass')">Pass</button><button class="btn btn-flag" onclick="setState('WT07','flag')">Flag</button><button class="btn btn-na" onclick="setState('WT07','na')">N/A</button></div></div>
+
+  <div class="section-heading">Storage &amp; Completion</div>
+  <div class="step" id="step-WT08"><span class="step-code">WT08</span><span class="step-text">Tank fully drained</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('WT08','pass')">Pass</button><button class="btn btn-flag" onclick="setState('WT08','flag')">Flag</button><button class="btn btn-na" onclick="setState('WT08','na')">N/A</button></div></div>
+  <div class="step" id="step-WT09"><span class="step-code">WT09</span><span class="step-text">Threaded bung replaced with PTFE</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('WT09','pass')">Pass</button><button class="btn btn-flag" onclick="setState('WT09','flag')">Flag</button><button class="btn btn-na" onclick="setState('WT09','na')">N/A</button></div></div>
+  <div class="step" id="step-WT10"><span class="step-code">WT10</span><span class="step-text">Tank dried thoroughly internally</span><div class="step-buttons"><button class="btn btn-pass" onclick="setState('WT10','pass')">Pass</button><button class="btn btn-flag" onclick="setState('WT10','flag')">Flag</button><button class="btn btn-na" onclick="setState('WT10','na')">N/A</button></div></div>
+
+  <div class="section-heading">Records / Observations</div>
+  <div class="record-row"><div class="record-label">WR01 — Tank capacity (L)</div><input class="meta-input record-input short" id="rec-WR01" type="number" placeholder="e.g. 1000"></div>
+  <div class="record-row"><div class="record-label">WR02 — Milton volume used (L)</div><input class="meta-input record-input short" id="rec-WR02" type="number" placeholder="e.g. 6"></div>
+  <div class="record-row"><div class="record-label">WR03 — Leaks observed</div><textarea class="record-input" id="rec-WR03" placeholder="Describe any leaks or leave blank…"></textarea></div>
+
+  <div class="warning-bar" id="warningBar">Complete all required steps before submitting.</div>
+  <div class="submit-area">
+    <button class="submit-btn" onclick="handleSubmit()">Complete &amp; Generate PDF</button>
+    <p class="submit-note">Generates a PDF service record ready to upload to Rentman</p>
+  </div>
+</div>
+
+<div class="completion" id="completionScreen">
+  <div class="completion-icon">✓</div>
+  <div class="completion-title">Service Complete</div>
+  <div class="completion-sub" id="completionSub"></div>
+  <div class="ref-block">
+    <div class="ref-label">Rentman Reference</div>
+    <div class="ref-number" id="refNumber">—</div>
+    <div class="rentman-note">Save PDF to Rentman using this filename</div>
+  </div>
+  <div class="flagged-notice" id="flaggedNotice" style="display:none;">
+    <div class="flagged-notice-title">⚑ Flagged Items</div>
+    <div id="flaggedList"></div>
+  </div>
+  <div id="pdfGateNote" class="pdf-gate-note">Download the PDF and upload it to Rentman to complete this record.</div>
+  <button class="pdf-btn" id="pdfBtn" onclick="generatePDF()">Download PDF Record</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const STEPS = ['WT01','WT02','WT03','WT04','WT05','WT06','WT07','WT08','WT09','WT10'];
+const STEP_TEXT = {
+  WT01:'Internal dirt and debris removed',
+  WT02:'Tank positioned to allow controlled drainage without water spillage',
+  WT03:'Tank exterior jetwashed',
+  WT04:'Tank filled completely with clean water',
+  WT05:'Milton added at correct dilution rate (600ml per 100L)',
+  WT06:'Disinfectant soak ≥15 minutes',
+  WT07:'Tank monitored for leaks during soak',
+  WT08:'Tank fully drained',
+  WT09:'Threaded bung replaced with PTFE',
+  WT10:'Tank dried thoroughly internally'
+};
+const RECORDS = [
+  { id: 'WR01', label: 'Tank capacity (L)' },
+  { id: 'WR02', label: 'Milton volume used (L)' },
+  { id: 'WR03', label: 'Leaks observed' }
+];
+const PAGE_CONFIG = { title: 'Water Tank Annual Service', sopVersion: 'v1.0', rentmanPrefix: 'watertank' };
+</script>
+<script src="checklist.js"></script>
+<script>initChecklist();</script>
+</body>
+</html>
